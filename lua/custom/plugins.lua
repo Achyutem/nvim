@@ -55,6 +55,34 @@ local plugins = {
     end,
   },
   {
+    "windwp/nvim-ts-autotag",
+    ft = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+    },
+    config = function ()
+      require("nvim-ts-autotag").setup()
+    end
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function ()
+      opts = require("plugins.configs.treesitter")
+      opts.ensure_installed = {
+        "lua",
+        "typescript",
+        "javascript",
+        "css",
+        "tsx",
+        "go",
+        "rust",
+      }
+      return opts
+    end
+  },
+  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
@@ -67,6 +95,7 @@ local plugins = {
         "mypy",
         "ruff-lsp",
         "pyright",
+        "gopls",
       },
     },
   },
