@@ -3,12 +3,11 @@ local on_attach = config.on_attach
 local capabilities = config.capabilities
 
 local lspconfig = require("lspconfig")
-
 local servers = {
     "gopls",
     "pyright",
-    "ruff_lsp",
-    "tsserver",
+    -- "ruff_lsp",
+    -- "ts-sl",
     "eslint",
     "tailwindcss"
 }
